@@ -1,0 +1,30 @@
+{
+  "name": "codebar-unit-testing",
+  "version": "0.0.1",
+  "description": "Unit Test Example",
+  "main": "DayUtils.js",
+  "dependencies": {
+    "expect": "^1.20.1"
+  },
+  "devDependencies": {
+    "expect": "^1.20.1",
+    "mocha": "^2.4.5"
+  },
+  "scripts": {
+    "test": "mocha DayUtils.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seantdg/codebar-unit-testing.git"
+  },
+  "keywords": [
+    "unit",
+    "test"
+  ],
+  "author": "Sean Davis <sm.davis@gmx.com> (http://seantdg.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seantdg/codebar-unit-testing/issues"
+  },
+  "homepage": "https://github.com/seantdg/codebar-unit-testing#readme"
+}
