@@ -1,8 +1,28 @@
 var expect = require('expect');
 
-//convert a timestamp to a day e.g. 1456756698612 = Monday
-var getEnglishDay = function(timestamp) {
-	var date = new Date(Number(timestamp));
+//Unit Tests here:
+describe('Dates are converted to the correct day of the week in English', function() {
+
+	it('Today is converted correctly', function() {
+		var now = new Date();
+		var today = getEnglishDay(now);		//call our function
+		expect(today).toEqual('Tuesday');
+	});
+
+	it('Yesterday is converted correctly', function() {
+		var now = new Date();
+
+		var yesterdayDate = new Date();
+		yesterdayDate.setDate(now.getDate() - 1);
+
+		var yesterday = getEnglishDay(yesterdayDate);	//call our function
+		expect(yesterday).toEqual('Monday');
+	});
+
+});
+
+//convert a Date object to an English day
+var getEnglishDay = function(date) {
 	var day = date.getDay(); //0 is sunday, 1 is monday ...
 
 	var displayDay = "";
@@ -31,20 +51,3 @@ var getEnglishDay = function(timestamp) {
 	}
 	return displayDay;
 }
-
-//Unit Tests here:
-describe('Timestamps are converted to the correct day', function() {
-
-	it('Today is converted correctly', function() {
-		var now = new Date();
-		var today = getEnglishDay(now);
-		expect(today).toEqual('Sunday');
-	});
-
-	it('Yesterday is converted correctly', function() {
-		var now = new Date();
-		var yesterday = getEnglishDay((new Date()).setDate(now.getDate() - 1));
-		expect(yesterday).toEqual('Saturday');
-	});
-
-});
